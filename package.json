@@ -1,0 +1,30 @@
+{
+  "name": "mcp-security-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:gateway": "tsx src/gateway.ts",
+    "dev:mock": "tsx src/mock-server.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start:gateway": "node dist/gateway.js",
+    "start:mock": "node dist/mock-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.20.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
