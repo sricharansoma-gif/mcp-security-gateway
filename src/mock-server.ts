@@ -14,8 +14,11 @@ app.use(
 app.post("/mcp", (req, res) => {
   const request = req.body;
 
-  console.log("\n--- DOWNSTREAM MCP SERVER RECEIVED ---");
-  console.log(JSON.stringify(request, null, 2));
+  console.log(
+    `[DOWNSTREAM] method=${
+      typeof request?.method === "string" ? request.method : "invalid"
+    }`
+  );
 
   // Basic JSON-RPC validation
   if (

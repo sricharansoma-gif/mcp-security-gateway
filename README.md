@@ -80,8 +80,11 @@ The unauthorized request is rejected before it reaches the downstream MCP server
 ```text
 mcp-security-gateway/
 ├── src/
+│   ├── app.ts
 │   ├── gateway.ts
 │   └── mock-server.ts
+├── tests/
+│   └── app.test.ts
 ├── .env.example
 ├── .gitignore
 ├── package.json
@@ -209,10 +212,10 @@ Expected response:
 }
 ```
 
-The gateway logs:
+The gateway logs the decision without request parameters or bearer credentials:
 
 ```text
-[BLOCK] role=viewer tool=admin_reset_key
+[BLOCK] role=viewer method=tools/call
 ```
 
 The downstream MCP server does not receive this request.
@@ -250,6 +253,12 @@ Check TypeScript without generating files:
 
 ```bash
 npm run typecheck
+```
+
+Run the automated security tests after installing development dependencies:
+
+```bash
+npm test
 ```
 
 ## Security Considerations
